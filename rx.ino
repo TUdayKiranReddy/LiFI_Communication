@@ -2,7 +2,7 @@ int ldr = A0;
 int cutoff = 700;
 int dly = 10;
 int a = 0,k = 0,d = 0;
-int b,val,arr[];
+int c,b,val,arr[];
 char s ;
 
 void setup() {
@@ -69,10 +69,10 @@ return d;
 
 void msg()    //For computing the recieved  bits . ASCII to string
 {
-
-  while(readldr()!=33)
+  c = readldr()
+  while(c!=33)
   {
-    arr[k] = readldr();
+    arr[k] = c;
     k++;
   }
   
