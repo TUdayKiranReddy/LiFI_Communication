@@ -2,7 +2,7 @@ int ldr = A0;
 int cutoff = 700;
 int dly = 10;
 int a = 0,k = 0,d = 0;
-int c,b,val,arr[];
+int c,b,val,arr[32];
 char s ;
 
 void setup() {
@@ -36,21 +36,22 @@ void initldr()   //For initilisation of ldr for recieving "!" letter
 
   while(b == 0)
   {
-  for (int i = 0;i<8,i++)
+  for (int i = 0;i<8;i++)
   {
-    a+=bti(digitalRead(ldr))*pow(2,i)
+    a+=bti()*pow(2,i);
     delay(dly);   
   }
   if(a == 33)
   {
     b=1;
     }
-  }
-  esle
+  
+  else
   {
     b=0;
     delay(dly);
   }
+}
 }
 
 int readldr()   //Reading bit recieved by ldr
@@ -60,7 +61,7 @@ int readldr()   //Reading bit recieved by ldr
   {
      for (int j = 0;j<8;j++)
      {
-        d+=bti(digitalRead(ldr))*pow(2,j)
+        d+=bti()*pow(2,j);
         delay(dly);   
      }
   }
@@ -69,7 +70,7 @@ return d;
 
 void msg()    //For computing the recieved  bits . ASCII to string
 {
-  c = readldr()
+  c = readldr();
   while(c!=33)
   {
     arr[k] = c;
